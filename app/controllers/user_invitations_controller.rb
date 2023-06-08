@@ -9,13 +9,14 @@ class UserInvitationsController < ApplicationController
   end
 
   def create
-    user_invitation = UserInvitation.create(user_invitation_params)
-    render json: user_invitation.as_json, status: :ok if user_invitation
+    user_invitation = UserInvitation.new(user_invitation_params)
+    user_invitation.referred_from = current_user.id
+    render json: user_invitation.as_json, status: :ok if user_invitation.save
   end
 
   private
 
   def user_invitation_params
-    params.require(:user_invitation).permit(:email,:referred_from,:status)
+    params.require(:user_invitation).permit(:email)
   end
 end
