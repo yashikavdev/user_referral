@@ -1,9 +1,5 @@
 class UserInvitation < ApplicationRecord
-  enum status: {
-    pending: 'pending',
-    sent: 'sent',
-    accepted: 'accepted',
-  }, _default: 'pending'
+  enum status: %i[pending sent accepted], _default: :pending
 
   validates :email, presence: true, uniqueness: true
 
@@ -20,5 +16,4 @@ class UserInvitation < ApplicationRecord
   def update_status
     update(status: :sent)
   end
-
 end
