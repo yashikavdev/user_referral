@@ -4,6 +4,7 @@ Rails.application.routes.draw do
                                     registrations: 'users/registrations',
                                     passwords: 'users/passwords' }
 
+  resources :user_invitations
   root 'components#index'
   get 'components/index'
   post '/auth/login', to: 'authentication#login'
