@@ -13,7 +13,7 @@ import { invitationSchema } from "../utils";
 import Error from "./error";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Header from './UI/Header';
+import Header from "././UI/Header"
 interface Invitation {
   email: string;
 }
@@ -34,7 +34,7 @@ export default function UserInvitation() {
     },
     validationSchema: invitationSchema,
     onSubmit: (values: Invitation) => {
-      axios.post("/invitations.json", { "invitation": values }, { headers: headers })
+      axios.post("/user_invitations.json", { "user_invitation": values }, { headers: headers })
         .then((response) => {
           navigate("/dashboard");
         })

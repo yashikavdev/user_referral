@@ -26,7 +26,7 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:3000/invitations.json', {headers:headers}).then((response) => {
+    axios.get('/user_invitations', { headers:headers }).then((response) => {
       setRowData(response.data)
     })
   }, [token]);
