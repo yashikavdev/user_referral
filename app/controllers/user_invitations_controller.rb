@@ -5,11 +5,11 @@ class UserInvitationsController < ApplicationController
   before_action :authenticate_request
 
   def index
-    render json: UserInvitation.all.as_json, status: :ok
+    render json: current_user.user_invitations.as_json, status: :ok
   end
 
   def create
-    user_invitation = UserInvitation.new(user_invitation_params)
+    user_invitation = current_user.user_invitations.new(user_invitation_params)
     user_invitation.referred_from = current_user.id
     render json: user_invitation.as_json, status: :ok if user_invitation.save
   end

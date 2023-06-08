@@ -7,6 +7,5 @@ Rails.application.routes.draw do
   resources :user_invitations
   root 'components#index'
   get 'components/index'
-  post '/auth/login', to: 'authentication#login'
-  get '/*a', to: 'application#not_found'
+  get '*path', to: 'components#index', via: :all
 end

@@ -10,6 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user.referrer = @referrer
     if user.save
       render json: { email: user.email,
+                      token: JsonWebToken.encode(user_id: user.id),
                       message: 'Sign Up Successful' }, status: :ok
     else
       render json: { errors: user.errors.full_messages, status: :unprocessable_entity }
@@ -23,6 +24,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def set_referral
-    @referrer = User.find_by(referral_token: params[:invitation_token]) if params[:invitation_token].present?
+    @referrer = User.find_by(referral_token: params[:user_invitation_token]) if params[:user_invitation_token].present?
   end
 end
