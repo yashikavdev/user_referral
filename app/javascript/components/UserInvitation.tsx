@@ -18,7 +18,13 @@ interface Invitation {
   email: string;
 }
 
-const defaultTheme = createTheme();
+const defaultTheme = createTheme({
+  palette: {
+    primary: {
+      main: "#7cb342"
+    },
+  },
+});
 
 export default function UserInvitation() {
   const navigate = useNavigate();

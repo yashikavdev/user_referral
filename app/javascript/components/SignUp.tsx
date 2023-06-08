@@ -23,7 +23,13 @@ interface SignUp {
   password_confirmation: string;
 }
 
-const defaultTheme = createTheme();
+const defaultTheme = createTheme({
+  palette: {
+    primary: {
+      main: "#7cb342"
+    },
+  },
+});
 
 export default function SignUp() {
   localStorage.removeItem('token');
@@ -55,6 +61,7 @@ export default function SignUp() {
   const {values, handleChange, handleBlur, handleSubmit, errors, touched} = formik;
   return (
     <>
+      <Header />
       <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -135,13 +142,6 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="/signin" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
       </Container>

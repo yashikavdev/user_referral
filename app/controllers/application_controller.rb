@@ -5,7 +5,6 @@ require 'json_web_token'
 # app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-  respond_to :json
 
   def not_found
     render json: { error: 'not_found' }

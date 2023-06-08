@@ -22,7 +22,13 @@ interface Login {
   password: string;
 }
 
-const defaultTheme = createTheme();
+const defaultTheme = createTheme({
+  palette: {
+    primary: {
+      main: "#7cb342"
+    },
+  },
+});
 
 export default function SignIn() {
   localStorage.removeItem('token');
@@ -53,6 +59,7 @@ export default function SignIn() {
 
   return (
     <>
+      <Header></Header>
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -113,13 +120,6 @@ export default function SignIn() {
               >
                 Sign In
               </Button>
-              <Grid container>
-                <Grid item>
-                  <Link href="/signup" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
             </Box>
           </Box>
         </Container>

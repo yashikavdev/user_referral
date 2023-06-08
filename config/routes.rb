@@ -7,7 +7,7 @@ Rails.application.routes.draw do
                                     passwords: 'users/passwords' }
 
   resources :user_invitations
+
   root 'components#index'
-  get 'components/index'
   get '*path', to: 'components#index', via: :all
 end

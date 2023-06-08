@@ -5,7 +5,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-
 interface pageProp {
   title:string,
   handleClick : Function

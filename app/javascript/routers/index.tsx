@@ -1,12 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "../components/Home";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import DashBoard from "../components/Dashboard";
 import PrivateRoute from "./privateRoute";
 import UserInvitation from "../components/UserInvitation";
-import Header from "../components/UI/Header";
 
 function Index() {
   return (
