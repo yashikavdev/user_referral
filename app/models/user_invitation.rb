@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# app/models/user_invitation.rb
 class UserInvitation < ApplicationRecord
   enum status: %i[pending sent accepted], _default: :pending
 

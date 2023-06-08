@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/controllers/user_invitations_controller.rb
 class UserInvitationsController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :authenticate_request

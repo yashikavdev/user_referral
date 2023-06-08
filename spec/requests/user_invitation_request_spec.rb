@@ -1,11 +1,11 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe UserInvitationsController, type: :request do
-
   before(:each) do
-    @user =  FactoryBot.create(:user)
-    referred_from = UserInvitation.create(referred_from: @user.id, email: 'test@gmail.com')
+    @user = FactoryBot.create(:user)
+    UserInvitation.create(referred_from: @user.id, email: 'test@gmail.com')
   end
 
   describe 'GET #index' do
@@ -16,9 +16,9 @@ RSpec.describe UserInvitationsController, type: :request do
     end
 
     it 'create request' do
-      params = { email: 'test@gmail.com'}
-        token = authentication_token(@user)
-        post user_invitations_path, params: { user_invitation: params }, headers: { Authorization: token }
+      params = { email: 'test@gmail.com' }
+      token = authentication_token(@user)
+      post user_invitations_path, params: { user_invitation: params }, headers: { Authorization: token }
       expect(response).to have_http_status(204)
     end
   end

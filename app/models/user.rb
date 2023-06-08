@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# app/models/user.rb
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -17,6 +20,6 @@ class User < ApplicationRecord
   end
 
   def update_user_status
-    UserInvitation.find_by_email(email).update(status: :accepted) if self.referrer_id
+    UserInvitation.find_by_email(email).update(status: :accepted) if referrer_id
   end
 end
