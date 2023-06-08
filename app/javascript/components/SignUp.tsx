@@ -55,7 +55,6 @@ export default function SignUp() {
   const {values, handleChange, handleBlur, handleSubmit, errors, touched} = formik;
   return (
     <>
-      <Header />
       <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
