@@ -57,7 +57,7 @@ function Header() {
   }, [isLoggedIn]);
 
   return (
-    <AppBar position="static" color="secondary">
+    <AppBar position="static" color="primary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }}}>

@@ -64,7 +64,7 @@ export default function SignIn() {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -105,7 +105,7 @@ export default function SignIn() {
                 value={values.password}
               />
               <Button
-                color="secondary"
+                color="primary"
                 type="submit"
                 fullWidth
                 variant="contained"

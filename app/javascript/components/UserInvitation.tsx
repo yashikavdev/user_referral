@@ -85,7 +85,7 @@ export default function UserInvitation() {
               />
               <Error error={errors?.email} touched={touched?.email} />
               <Button
-                color="secondary"
+                color="primary"
                 type="submit"
                 fullWidth
                 variant="contained"

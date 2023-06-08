@@ -66,7 +66,7 @@ export default function SignUp() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -127,7 +127,7 @@ export default function SignUp() {
               <Error error={errors?.password_confirmation} touched={touched?.password_confirmation}/>
             </Grid>
             <Button
-              color="secondary"
+              color="primary"
               type="submit"
               fullWidth
               variant="contained"
